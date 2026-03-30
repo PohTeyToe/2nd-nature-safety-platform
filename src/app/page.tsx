@@ -3,6 +3,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="bg-green-700 text-white rounded-lg px-6 py-4 mb-8 text-center text-sm sm:text-base">
+        Built for Troy at 2nd Nature Safety &mdash; a demo of tools to help you grow your business through association partnerships, certification tracking, and a modern web presence.
+      </div>
+
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-primary mb-4">2nd Nature Safety Digital Platform</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -51,7 +55,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="mt-16 text-center text-sm text-gray-400">
+      <div className="mt-8 text-center text-sm text-gray-400">
         Built for the Riipen Labs Growth Strategy Project &middot; Team 162 &middot; March 2026
       </div>
     </div>

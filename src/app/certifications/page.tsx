@@ -17,6 +17,12 @@ const STATUS_DOT: Record<string, string> = {
   "Not Started": "bg-gray-400",
 };
 
+function formatDate(iso: string): string {
+  if (!iso) return "";
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
 export default function CertificationsPage() {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -30,7 +36,9 @@ export default function CertificationsPage() {
   const [newCompany, setNewCompany] = useState("");
 
   useEffect(() => {
-    setEmployees(getEmployees());
+    const data = getEmployees();
+    setEmployees(data);
+    if (data.length > 0) setSelectedEmployee(data[0].id);
     setLoaded(true);
   }, []);
 
@@ -352,7 +360,7 @@ export default function CertificationsPage() {
                       ) : (
                         <div className="text-xs text-gray-600">
                           {cert.issueDate
-                            ? `Issued: ${cert.issueDate} | Expires: ${cert.expiryDate}`
+                            ? `Issued: ${formatDate(cert.issueDate)} | Expires: ${formatDate(cert.expiryDate)}`
                             : "No dates recorded"}
                         </div>
                       )}

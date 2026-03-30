@@ -307,7 +307,7 @@ export default function LandingPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
               {formSubmitted && (
                 <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-4 mb-6">
-                  Thanks for reaching out! We&apos;ll get back to you within 24 hours.
+                  Thanks! In a real deployment, this would send your message to Troy.
                 </div>
               )}
               <form onSubmit={handleSubmit} className="space-y-4">

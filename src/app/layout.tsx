@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "2nd Nature Safety Digital Platform",
   description: "Partnership CRM, Certification Tracking, and Training Solutions for workplace safety",
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
